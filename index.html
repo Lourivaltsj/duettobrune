@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duetto Brune - Doceria Artesanal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+    @font-face { 
+        font-family: 'Floriana', serif;
+        src: url('/fonts/Floriana.otf') format('otf'), url('/fonts/Floriana.otf') format('otf');
+    }
+        :root {
+            --primary: #d4a373;
+            --secondary: #faedcd;
+        
+            --accent: #e9edc6;
+            --dark: #4b3621;
+            --pink-soft: #f8ad9d;
+        }
+        body {
+            font-family: 'Floriana', sans-serif;
+            background-color: #fffaf0;
+            color: var(--dark);
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Floriana', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="intent://send/abid=5527996504862#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end" target="_blank" class="whatsapp-float">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.516.903 3.003 1.387 4.533 1.388 5.287 0 9.589-4.301 9.591-9.592 0-2.564-1.012-4.975-2.85-6.816-1.838-1.841-4.25-2.854-6.818-2.854-5.285 0-9.59 4.301-9.593 9.592-.001 1.749.469 3.413 1.367 4.847l-1.011 3.693 3.781-.992zm11.332-6.541c-.3-.15-1.774-.875-2.048-.976-.276-.1-.477-.15-.677.15s-.777.976-.951 1.176c-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.492-.893-.797-1.496-1.782-1.671-2.081-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.151-.175.201-.3.301-.5.1-.2.05-.375-.025-.525s-.677-1.635-.926-2.235c-.242-.586-.489-.508-.677-.518-.174-.008-.374-.01-.574-.01s-.525.075-.799.375c-.276.3-1.051 1.026-1.051 2.501s1.076 2.901 1.226 3.101c.15.2 2.117 3.232 5.128 4.532.715.309 1.274.494 1.708.632.719.228 1.374.195 1.891.118.577-.086 1.774-.725 2.024-1.425.25-.7.25-1.3 0-1.425-.076-.125-.276-.2-.576-.35z"/></svg>
+    </a>
+
+    <!-- Navegação -->
+    <nav class="glass-nav sticky top-0 z-50 px-6 py-4 flex justify-between items-center border-b border-orange-100">
+        <div class="text-2xl font-floriana text-pink-700">Duetto<span class="text-yellow-700">Bruné</span></div>
+        <div class="hidden md:flex space-x-8 font-floriana">
+            <a href="#home" class="hover:text-pink-500 transition">Início</a>
+            <a href="#cardapio" class="hover:text-pink-500 transition">Cardápio</a>
+            <a href="#sobre" class="hover:text-pink-500 transition">Sobre</a>
+            <a href="#contato" class="hover:text-pink-500 transition">Contato</a>
+        </div>
+        <a href="https://wa.me/5527996504862" target="_blank" class="bg-pink-500 text-white px-5 py-2 rounded-full text-sm font-floriana hover:bg-pink-600 transition shadow-md">Peça Agora</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative h-[80vh] flex items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Certifique-se de ter uma imagem chamada fundo.jpg na pasta img -->
+            <img src="img/fundo-hero.jpg" alt="" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative z-10 max-w-3xl">
+            <h1 class="text-5xl font-floriana md:text-7xl mb-6 text-dark leading-tight">Momentos doces que aquecem o coração.</h1>
+            <p class="text-lg font-floriana md:text-xl mb-8 text-gray-700">Doces artesanais feitos com ingredientes selecionados e muito amor. Entregamos na sua casa!</p>
+            <a href="#cardapio" class="bg-yellow-700 text-white px-8 py-4 rounded-lg text-lg font-floriana hover:bg-yellow-800 transition shadow-lg inline-block">Ver Cardápio</a>
+        </div>
+    </header>
+
+    <!-- Cardápio -->
+    <section id="cardapio" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-floriana mb-4">Nosso Cardápio</h2>
+            <div class="h-1 w-20 bg-pink-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Bolo Supreme -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md">
+                <div class="h-64 overflow-hidden">
+                    <img src="/img/torta_chocolate.jpg" alt="Bolo de Chocolate" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-floriana mb-2">Bolo Supreme Chocolate</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Massa fofinha de cacau 70% com recheio cremoso de brigadeiro belga e cobertura de ganache.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-floriana text-pink-600">R$ 15,00</span>
+                        <button onclick="orderWhatsApp('Bolo Supreme Chocolate')" class="bg-green-500 text-white p-2 px-4 rounded-lg hover:bg-green-600 flex items-center gap-2 transition">
+                            Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Torta de Maçã -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md border-2 border-yellow-100">
+                <div class="h-64 overflow-hidden relative">
+                    <span class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-floriana px-3 py-1 rounded-full uppercase tracking-wider z-10">Novo</span>
+                    <img src="/img/tortachocolate2.jpg" alt="Torta de Maçã" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-floriana mb-2">Bolo de Chocolate</h3>
+                    
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Massa amanteigada crocante, recheio de maçãs caramelizadas com um toque suave de canela.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-floriana text-pink-600">R$ 15,00</span>
+                        <button onclick="orderWhatsApp('Torta de Maçã Clássica')" class="bg-green-500 text-white p-2 px-4 rounded-lg hover:bg-green-600 flex items-center gap-2 transition">
+                            Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Macarons -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md">
+                <div class="h-64 overflow-hidden">
+                    <img src="/img/tortacreme.jpg" alt="Macarons" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-floriana mb-2">Bolo de Creme</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Mix de 12 unidades com sabores clássicos como pistache, baunilha e frutas vermelhas.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-floriana text-pink-600">R$ 15,00</span>
+                        <button onclick="orderWhatsApp('Caixa de Macarons')" class="bg-green-500 text-white p-2 px-4 rounded-lg hover:bg-green-600 flex items-center gap-2 transition">
+                            Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bombom Gourmet -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md border-2 border-yellow-100">
+                <div class="h-64 overflow-hidden relative">
+                    <span class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-floriana px-3 py-1 rounded-full uppercase tracking-wider z-10">Sugestão</span>
+                    <img src="/img/tortamorango.jpg" alt="Bombom Artesanal" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-floriana mb-2">Bolo de Morango</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Caixa com 6 bombons trufados artesanais (Morango, Nozes e Caramelo Salgado).</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-floriana text-pink-600">R$ 15,00</span>
+                        <button onclick="orderWhatsApp('Combo Bombom Gourmet')" class="bg-green-500 text-white p-2 px-4 rounded-lg hover:bg-green-600 flex items-center gap-2 transition">
+                            Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cheesecake -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md">
+                <div class="h-64 overflow-hidden">
+                    <img src="/img/doce-6.png" alt="Cheesecake" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-floriana mb-2">Trufa de Morango</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Leve, cremosa e com calda artesanal de morango, amora e framboesa fresca.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-floriana text-pink-600">R$15,00</span>
+                        <button onclick="orderWhatsApp('Cheesecake Frutas Vermelhas')" class="bg-green-500 text-white p-2 px-4 rounded-lg hover:bg-green-600 flex items-center gap-2 transition">
+                            Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brownie de Avelã -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md">
+                <div class="h-64 overflow-hidden">
+                    <img src="img/doce-1.jpg" alt="Brownie" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Trufa de Avelã</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Textura fudgy, carregado de avelãs torradas e pedaços de chocolate meio amargo.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-pink-600">R$ 15,00</span>
+                        <button onclick="orderWhatsApp('Brownie de Avela')" class="bg-green-500 text-white p-2 px-4 rounded-lg hover:bg-green-600 flex items-center gap-2 transition">
+                            Pedir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="bg-orange-50 py-20 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 w-full">
+                <img src="img/doce-1.jpg" alt="Nossa Cozinha" class="rounded-3xl shadow-2xl w-full">
+            </div>
+            <div class="flex-1">
+                <h2 class="text-4xl font-floriana mb-6">Nossa Paixão pela Confeitaria</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">Começamos em uma pequena cozinha familiar e hoje levamos alegria para toda a cidade. Nossa missão é transformar ingredientes simples em experiências inesquecíveis através de doces que carregam história.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <span class="w-6 h-6 bg-pink-200 rounded-full flex items-center justify-center text-pink-600 text-xs">✓</span>
+                        Ingredientes 100% Naturais
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-6 h-6 bg-pink-200 rounded-full flex items-center justify-center text-pink-600 text-xs">✓</span>
+                        Entrega Segura e Rápida
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-6 h-6 bg-pink-200 rounded-full flex items-center justify-center text-pink-600 text-xs">✓</span>
+                        Receitas Exclusivas da Família
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-[#2d1e12] text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-700 pb-12">
+            <div>
+                <h3 class="text-2xl font-floriana mb-4 text-pink-400">Duetto Bruné</h3>
+                <p class="text-gray-300 leading-relaxed">Onde cada pedaço conta uma história de amor e dedicação à arte de adoçar a vida.</p>
+            </div>
+            <div>
+                <h4 class="font-floriana mb-4 uppercase tracking-widest text-sm text-yellow-500">Funcionamento</h4>
+                <p class="text-gray-300">Segunda - Sábado: 10:00 às 19:00</p>
+                <p class="text-gray-300">Domingo: 11:00 às 16:00</p>
+            </div>
+            <div>
+                <h4 class="font-floriana mb-4 uppercase tracking-widest text-sm text-yellow-500">Contato</h4>
+                <p class="text-gray-300">Rua dos Doces, 123 - Centro</p>
+                <p class="text-gray-300 font-semibold mt-2">(27) 996504862</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 text-center text-gray-500 text-xs">
+            &copy; 2026 Duetto Bruné Confeitaria. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        function orderWhatsApp(productName) {
+            const message = `Olá! Gostaria de fazer um pedido: ${productName}. Poderia me passar mais detalhes?`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/5527996504862?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
